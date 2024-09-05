@@ -1,6 +1,7 @@
 const USGS_EARTHQUAKE_MONTHLY_URL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson";
 const USGS_EARTHQUAKE_WEEKLY_URL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson";
 const USGS_EARTHQUAKE_DAILY_URL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_day.geojson";
+const interval = document.getElementById("earthquake-interval");
 const dailyTab = document.getElementById("daily");
 const weeklyTab = document.getElementById("weekly");
 const monthlyTab = document.getElementById("monthly");
@@ -83,6 +84,7 @@ const fetchEarthquakeList = async(url)=>{
 function changeTab(url, tab){
     fetchEarthquakeList(url);
     updateFolderLinks(tab);
+    interval.innerText = `${tab.toUpperCase()}`;
 }
 
 dailyTab.addEventListener("click", function(event){
