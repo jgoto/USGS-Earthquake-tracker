@@ -1,1 +1,65 @@
 # USGS-Earthquake-tracker
+
+## https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson
+
+{
+  type: "FeatureCollection",
+  metadata: {
+    generated: Long Integer,
+    url: String,
+    title: String,
+    api: String,
+    count: Integer,
+    status: Integer
+  },
+  bbox: [
+    minimum longitude,
+    minimum latitude,
+    minimum depth,
+    maximum longitude,
+    maximum latitude,
+    maximum depth
+  ],
+  features: [
+    {
+      type: "Feature",
+      properties: {
+        mag: Decimal,
+        place: String,
+        time: Long Integer,
+        updated: Long Integer,
+        tz: Integer,
+        url: String,
+        detail: String,
+        felt:Integer,
+        cdi: Decimal,
+        mmi: Decimal,
+        alert: String,
+        status: String,
+        tsunami: Integer,
+        sig:Integer,
+        net: String,
+        code: String,
+        ids: String,
+        sources: String,
+        types: String,
+        nst: Integer,
+        dmin: Decimal,
+        rms: Decimal,
+        gap: Decimal,
+        magType: String,
+        type: String
+      },
+      geometry: {
+        type: "Point",
+        coordinates: [
+          longitude,
+          latitude,
+          depth
+        ]
+      },
+      id: String
+    },
+    …
+  ]
+}

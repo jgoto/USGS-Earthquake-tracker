@@ -1,0 +1,33 @@
+body{
+    background-color: beige;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    border-bottom: 4px solid darkolivegreen;
+}
+
+#header h1{
+    font-size: 1.25em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#interval-links{
+    display: flex;
+    gap: 5vw;
+}
+
+.timespan{
+    border: 2px solid darkolivegreen;
+    background-color: beige;
+    color: black;
+}
+
+.active{
+    background-color: darkolivegreen;
+    color: beige;
+}
