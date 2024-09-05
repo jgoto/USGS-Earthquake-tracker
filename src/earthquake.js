@@ -19,6 +19,23 @@ const dataNotFound = () =>{
     earthquakeContainer.appendChild(notFoundText);
 }
 
+function updateFolderLinks(tab){
+    dailyTab.classList.remove("active");
+    weeklyTab.classList.remove("active");
+    monthlyTab.classList.remove("active");
+    switch(tab){
+        case "daily":
+            dailyTab.classList.add("active");
+            break;
+        case "weekly":
+            weeklyTab.classList.add("active");
+            break;
+        case "monthly":
+            monthlyTab.classList.add("active");
+            break;
+    }
+}
+
 const drawCard = (earthquake) =>{
     const card = document.createElement("div");
     card.classList.add("card");
@@ -64,21 +81,20 @@ const fetchEarthquakeList = async(url)=>{
 }
 
 function changeTab(url, tab){
-    //tab.classList.add("active");
     fetchEarthquakeList(url);
-
+    updateFolderLinks(tab);
 }
 
 dailyTab.addEventListener("click", function(event){
-    changeTab(USGS_EARTHQUAKE_DAILY_URL, event.target)
+    changeTab(USGS_EARTHQUAKE_DAILY_URL, "daily");
 });
 
 weeklyTab.addEventListener("click", function(event){
-    changeTab(USGS_EARTHQUAKE_WEEKLY_URL, event.target)
+    changeTab(USGS_EARTHQUAKE_WEEKLY_URL, "weekly");
 });
 
 monthlyTab.addEventListener("click", function(event){
-    changeTab(USGS_EARTHQUAKE_MONTHLY_URL, event.target)
+    changeTab(USGS_EARTHQUAKE_MONTHLY_URL, "monthly");
 });
 
-fetchEarthquakeList(USGS_EARTHQUAKE_MONTHLY_URL);
+changeTab(USGS_EARTHQUAKE_MONTHLY_URL, "monthly");
