@@ -1,4 +1,6 @@
 const USGS_EARTHQUAKE_MONTHLY_URL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson";
+const USGS_EARTHQUAKE_WEEKLY_URL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson";
+const USGS_EARTHQUAKE_DAILY_URL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_day.geojson";
 let earthquakeList;
 const earthquakeContainer = document.getElementById("content-container");
 
@@ -29,9 +31,9 @@ const drawEarthquakeCards = (earthquakes) =>{
     });
 }
 
-const fetchEarthquakeList = async()=>{
+const fetchEarthquakeList = async(url)=>{
     try {
-        const response = await fetch(USGS_EARTHQUAKE_MONTHLY_URL);
+        const response = await fetch(url);
 
         if(!response.ok)
         {
@@ -47,4 +49,4 @@ const fetchEarthquakeList = async()=>{
 }
 
 
-fetchEarthquakeList();
+fetchEarthquakeList(USGS_EARTHQUAKE_MONTHLY_URL);

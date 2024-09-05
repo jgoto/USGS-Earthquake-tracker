@@ -21,6 +21,15 @@ body{
     gap: 5vw;
 }
 
+#content-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.card{
+    width: 50%;
+}
+
 .timespan{
     border: 2px solid darkolivegreen;
     background-color: beige;
