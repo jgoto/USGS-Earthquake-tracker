@@ -19,6 +19,7 @@ body{
 #interval-links{
     display: flex;
     gap: 5vw;
+    cursor: pointer;
 }
 
 #content-container{
