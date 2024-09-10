@@ -62,6 +62,10 @@ div.card{
     color: beige;
 }
 
+.map{
+    height: 200px;
+}
+
 @media (min-width: 1100px){
     div.card{
         width: 33%;

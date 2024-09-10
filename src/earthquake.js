@@ -49,7 +49,9 @@ const drawCard = (earthquake) =>{
     url.href=earthquake.properties.url;
     url.innerText="(usgs)";
     cardText.appendChild(url);
+    const locationMap = createLocationMap(earthquake.id, earthquake.geometry.coordinates)
     card.appendChild(cardText);
+    card.appendChild(locationMap);
     earthquakeContainer.appendChild(card);
 }
 
