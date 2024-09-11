@@ -8,6 +8,12 @@ const monthlyTab = document.getElementById("monthly");
 let earthquakeList;
 const earthquakeContainer = document.getElementById("content-container");
 
+function setAccessedDate(){
+    const dateStr = document.getElementById("date-string");
+    const today = new Date();
+    dateStr.innerText = "Accessed: " + today;
+}
+
 function getTime(time)
 {
     return new Date(time);
@@ -86,6 +92,7 @@ const fetchEarthquakeList = async(url)=>{
 function changeTab(url, tab){
     fetchEarthquakeList(url);
     updateFolderLinks(tab);
+    const today = new Date();
     interval.innerText = `${tab.toUpperCase()}`;
 }
 
@@ -102,3 +109,4 @@ monthlyTab.addEventListener("click", function(event){
 });
 
 changeTab(USGS_EARTHQUAKE_MONTHLY_URL, "monthly");
+setAccessedDate();
